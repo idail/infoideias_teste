@@ -34,7 +34,6 @@ class Funcoes
     public function PrimoAnterior(int $numero): int {
         
         $retorno = $this->verifica_primo_anterior($numero);
-        var_dump($retorno);
         return $retorno;
     }
 
@@ -273,8 +272,4 @@ class Funcoes
         return $recebe_primo;
     }
 }
-
-$funcoes = new Funcoes();
-$retorno = $funcoes->PrimoAnterior(14);
-var_dump($retorno);
 ?>
