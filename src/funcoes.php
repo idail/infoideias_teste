@@ -16,50 +16,8 @@ class Funcoes
      * */
     public function SeculoAno(int $ano): int
     {
-        if ($ano <= 1 || $ano <= 100)
-            $recebe_seculo = 1;
-        elseif($ano <= 101 || $ano <= 200)
-            $recebe_seculo = 2;
-        elseif($ano <= 201 || $ano <= 300)
-            $recebe_seculo = 3;
-        elseif($ano <= 301 || $ano <= 400)
-            $recebe_seculo = 4;
-        elseif($ano <= 401 || $ano <= 500)
-            $recebe_seculo = 5;
-        elseif($ano <= 501 || $ano <= 600)
-            $recebe_seculo = 6;
-        elseif($ano <= 601 || $ano <= 700)
-            $recebe_seculo = 7;
-        elseif($ano <= 701 || $ano <= 800)
-            $recebe_seculo = 8;
-        elseif($ano <= 801 || $ano <= 900)
-            $recebe_seculo = 9;
-        elseif($ano <= 901 || $ano <= 1000)
-            $recebe_seculo = 10;
-        elseif($ano <= 1001 || $ano <= 1100)
-            $recebe_seculo = 11;
-        elseif($ano <= 1101 || $ano <= 1200)
-            $recebe_seculo = 12;
-        elseif($ano <= 1201 || $ano <= 1300)
-            $recebe_seculo = 13;
-        elseif($ano <= 1301 || $ano <= 1400)
-            $recebe_seculo = 14;
-        elseif($ano <= 1401 || $ano <= 1500)
-            $recebe_seculo = 15;
-        elseif($ano <= 1501 || $ano <= 1600)
-            $recebe_seculo = 16;
-        elseif($ano <= 1601 || $ano <= 1700)
-            $recebe_seculo = 17;
-        elseif($ano <= 1701 || $ano <= 1800)
-            $recebe_seculo = 18;
-        elseif($ano <= 1801 || $ano <= 1900)
-            $recebe_seculo = 19;
-        elseif($ano <= 1901 || $ano <= 2000)
-            $recebe_seculo = 20;
-        elseif($ano <= 2001 || $ano <= 2100)
-            $recebe_seculo = 21;
-
-        return $recebe_seculo;
+        $retorno = $this->verifica_seculo($ano);
+        return $retorno;
     }
 
 
@@ -74,56 +32,10 @@ class Funcoes
 
      * */
     public function PrimoAnterior(int $numero): int {
-        if($numero == 4)
-            $recebe_primo = 3; 
-        elseif($numero == 6)
-            $recebe_primo = 5;
-        elseif($numero == 8 || $numero == 9 || $numero == 10)
-            $recebe_primo = 7;
-        elseif($numero == 12)
-            $recebe_primo = 11;
-        elseif($numero == 14 || $numero == 15 || $numero == 16)
-            $recebe_primo = 13;
-        elseif($numero == 18)
-            $recebe_primo = 17;
-        elseif($numero == 20 || $numero == 21 || $numero == 22)
-            $recebe_primo = 19;
-        elseif($numero == 24 || $numero == 25 || $numero == 26 || $numero == 27 || $numero == 28)
-            $recebe_primo = 23;
-        elseif($numero == 30)
-            $recebe_primo = 29;
-        elseif($numero == 32 || $numero == 33 || $numero == 34 || $numero == 35 || $numero == 36)
-            $recebe_primo = 31;
-        elseif($numero == 38 || $numero == 39 || $numero == 40)
-            $recebe_primo = 37;
-        elseif($numero == 42)
-            $recebe_primo = 41;
-        elseif($numero == 44 || $numero == 45 || $numero == 46)
-            $recebe_primo = 43;
-        elseif($numero == 48 || $numero == 49 || $numero == 50 || $numero == 51 || $numero == 52)
-            $recebe_primo = 47;
-        elseif($numero == 54 || $numero == 55 || $numero == 56 || $numero == 57 || $numero == 58)
-            $recebe_primo = 53;
-        elseif($numero == 60)
-            $recebe_primo = 59;
-        elseif($numero == 62 || $numero == 63 || $numero == 64 || $numero == 65 || $numero == 66)
-            $recebe_primo = 61;
-        elseif($numero == 68 || $numero == 69 || $numero == 70)
-            $recebe_primo = 67;
-        elseif($numero == 72)
-            $recebe_primo = 71;
-        elseif($numero == 74 || $numero == 75 || $numero == 76 || $numero == 77 || $numero == 78)
-            $recebe_primo = 73;
-        elseif($numero == 80 || $numero == 81 || $numero == 82)
-            $recebe_primo = 79;
-        elseif($numero == 84 || $numero == 85 || $numero == 86 || $numero == 87 || $numero == 88)
-            $recebe_primo = 83;
-        elseif($numero == 90 || $numero == 91 || $numero == 92 || $numero == 93 || $numero == 94 || $numero == 95 || $numero == 96)
-            $recebe_primo = 89;
-        else
-            $recebe_primo = 97;
-
-        return $recebe_primo;
+        
+        $retorno = $this->verifica_primo_anterior($numero);
+        var_dump($retorno);
+        return $retorno;
     }
 
 
@@ -205,5 +117,164 @@ class Funcoes
         else
             return false;
     }
+
+    public function verifica_seculo(int $ano):int
+    {
+        switch($ano)
+        {
+            case $ano <= 1 || $ano <= 100:
+                $recebe_seculo = 1;
+            break;
+            case $ano <= 101 || $ano <= 200:
+                $recebe_seculo = 2;
+            break;
+            case $ano <= 201 || $ano <= 300:
+                $recebe_seculo = 3;
+            break;
+            case $ano <= 301 || $ano <= 400:
+                $recebe_seculo = 4;
+            break;
+            case $ano <= 401 || $ano <= 500:
+                $recebe_seculo = 5;
+            break;
+            case $ano <= 501 || $ano <= 600:
+                $recebe_seculo = 6;
+            break;
+            case $ano <= 601 || $ano <= 700:
+                $recebe_seculo = 7;
+            break;
+            case $ano <= 701 || $ano <= 800:
+                $recebe_seculo = 8;
+            break;
+            case $ano <= 801 || $ano <= 900:
+                $recebe_seculo = 9;
+            break;
+            case $ano <= 901 || $ano <= 1000:
+                $recebe_seculo = 10;
+            break;
+            case $ano <= 1001 || $ano <= 1100:
+                $recebe_seculo = 11;
+            break;
+            case $ano <= 1101 || $ano <= 1200:
+                $recebe_seculo = 12;
+            break;
+            case $ano <= 1201 || $ano <= 1300:
+                $recebe_seculo = 13;
+            case $ano <= 1301 || $ano <= 1400:
+                $recebe_seculo = 14;
+            break;
+            case $ano <= 1401 || $ano <= 1500:
+                $recebe_seculo = 15;
+            break;
+            case $ano <= 1501 || $ano <= 1600:
+                $recebe_seculo = 16;
+            break;
+            case $ano <= 1601 || $ano <= 1700:
+                $recebe_seculo = 17;
+            break;
+            case $ano <= 1701 || $ano <= 1800:
+                $recebe_seculo = 18;
+            break;
+            case $ano <= 1801 || $ano <= 1900:
+                $recebe_seculo = 19;
+            break;
+            case $ano <= 1901 || $ano <= 2000:
+                $recebe_seculo = 20;
+            break;
+            case $ano <= 2001 || $ano <= 2100:
+                $recebe_seculo = 21;
+            break;
+            default:
+                $recebe_seculo = 0;
+            break;
+        }
+        return $recebe_seculo;
+    }
+
+    public function verifica_primo_anterior(int $numero):int
+    {
+        switch($numero)
+        {
+            case $numero == 4:
+                $recebe_primo = 3;
+            break;
+            case $numero == 6:
+                $recebe_primo = 5;
+            break;
+            case $numero == 8 || $numero == 9 || $numero == 10:
+                $recebe_primo = 7;
+            break;
+            case $numero == 12:
+                $recebe_primo = 11;
+            case $numero == 14 || $numero == 15 || $numero == 16:
+                $recebe_primo = 13;
+            break;
+            case $numero == 18:
+                $recebe_primo = 17;
+            break;
+            case $numero == 20 || $numero == 21 || $numero == 22:
+                $recebe_primo = 19;
+            break;
+            case $numero == 24 || $numero == 25 || $numero == 26 || $numero == 27 || $numero == 28:
+                $recebe_primo = 23;
+            break;
+            case $numero == 30:
+                $recebe_primo = 29;
+            break;
+            case $numero == 32 || $numero == 33 || $numero == 34 || $numero == 35 || $numero == 36:
+                $recebe_primo = 31;
+            break;
+            case $numero == 38 || $numero == 39 || $numero == 40:
+                $recebe_primo = 37;
+            break;
+            case $numero == 42:
+                $recebe_primo = 41;
+            break;
+            case $numero == 44 || $numero == 45 || $numero == 46:
+                $recebe_primo = 43;
+            break;
+            case $numero == 48 || $numero == 49 || $numero == 50 || $numero == 51 || $numero == 52:
+                $recebe_primo = 47;
+            break;
+            case $numero == 54 || $numero == 55 || $numero == 56 || $numero == 57 || $numero == 58:
+                $recebe_primo = 53;
+            break;
+            case $numero == 60:
+                $recebe_primo = 59;
+            break;
+            case $numero == 62 || $numero == 63 || $numero == 64 || $numero == 65 || $numero == 66:
+                $recebe_primo = 61;
+            break;
+            case $numero == 68 || $numero == 69 || $numero == 70:
+                $recebe_primo = 67;
+            break;
+            case $numero == 72:
+                $recebe_primo = 71;
+            break;
+            case $numero == 74 || $numero == 75 || $numero == 76 || $numero == 77 || $numero == 78:
+                $recebe_primo = 73;
+            break;
+            case $numero == 80 || $numero == 81 || $numero == 82:
+                $recebe_primo = 79;
+            break;
+            case $numero == 84 || $numero == 85 || $numero == 86 || $numero == 87 || $numero == 88:
+                $recebe_primo = 83;
+            break;
+            case $numero == 90 || $numero == 91 || $numero == 92 || $numero == 93 || $numero == 94 || $numero == 95 || $numero == 96:
+                $recebe_primo = 89;
+            break;
+            case $numero == 98 || $numero == 99 || $numero == 100:
+                $recebe_primo = 97;
+            break;
+            default:
+                $recebe_primo = 0;
+            break;
+        }
+        return $recebe_primo;
+    }
 }
+
+$funcoes = new Funcoes();
+$retorno = $funcoes->PrimoAnterior(14);
+var_dump($retorno);
 ?>
