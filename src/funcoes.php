@@ -193,18 +193,17 @@ class Funcoes
 
      * */
 
-    // public function SequenciaCrescente(array $arr): boolean {
-    //     return true;
-    // }
+    public function SequenciaCrescente(array $arr): bool {
+        unset($arr[0]);
+
+        $sequencia = array_unique($arr,SORT_NUMERIC);
+
+        $sequencia_final = asort($sequencia,SORT_NUMERIC);
+        
+        if($sequencia_final)
+            return true;
+        else
+            return false;
+    }
 }
-
-
-$classe = new Funcoes();
-
-$numeros = array(
-    array(1,10,18),
-    array(20,15,27)
-);
-
-$retorno = $classe->SegundoMaior($numeros);
-var_dump($retorno);
+?>
